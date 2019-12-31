@@ -39,7 +39,7 @@ public class DatabaseApi {
 	Random ran;
 	int rand = 0;
 	java.util.ArrayList<String> vec = new java.util.ArrayList<String>();
-	String loginDriverDetailsOnUat = "jdbc:oracle:thin:@//dm04-scan.cihi.ca:1528/uatdb05_user.cihi.ca";
+	String loginDriverDetailsOnUat = "jdbc:oracle:thin:@//servername:port_number/databasename";
 	String password = "";
 	Class<?> classname = new Object() {
 	}.getClass();
