@@ -54,15 +54,7 @@ public class DatabaseApi {
 		}.getClass();
 
 		System.out.println("Generating connection : " + connection);
-		/*
-		 * try { if (connection == null) { connection = getConnectionToDbase();
-		 * return connection; } } catch (Exception exception) {
-		 * LogContentLoggerSevere(classname, "1, " + exception.toString()); }
-		 * try { if (connection.isClosed()) { connection =
-		 * getConnectionToDbase(); return connection; } } catch (Exception
-		 * exception) { LogContentLoggerSevere(classname, "2" +
-		 * exception.toString()); }
-		 */
+		
 
 		return connection;
 	}
