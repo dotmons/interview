@@ -1,4 +1,4 @@
-package hackerrank;
+package amz;
 
 import java.util.*;
 
