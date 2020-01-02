@@ -14,6 +14,10 @@ public class TransportSystem {
     public TransportSystem(){
         
     }
+    
+    public int getMinimumTransportPort(){
+        return -1;
+    }
     public static void main(String[] args){
         TransportSystem transportSystem = new TransportSystem();
     }
