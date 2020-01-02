@@ -11,4 +11,10 @@ package amz;
  */
 public class TransportSystem {
     
+    public TransportSystem(){
+        
+    }
+    public static void main(String[] args){
+        TransportSystem transportSystem = new TransportSystem();
+    }
 }
