@@ -17,27 +17,8 @@ public class TransportSystem {
 
     public TransportSystem() {
 
-        List<List<Integer>> area = new ArrayList<>();
-        List<Integer> listValues = new ArrayList();
-        listValues.add(1);
-        listValues.add(0);
-        listValues.add(0);
-        area.add(listValues);
-
-        listValues = new ArrayList();
-        listValues.add(1);
-        listValues.add(0);
-        listValues.add(0);
-        area.add(listValues);
-
-        listValues = new ArrayList();
-        listValues.add(1);
-        listValues.add(9);
-        listValues.add(1);
-        area.add(listValues);
-
-        System.out.println(getMinimumTransportPortPost(area));
-       // System.out.println("The minimum transport move is: " + getMinimumTransportPortPost(area));
+        System.out.println(getMinimumTransportPortPost(testCaseA()));
+        System.out.println(getMinimumTransportPortPost(testCaseB()));
     }
 
     public int getMinimumTransportPortPost(List<List<Integer>> area) {
@@ -56,8 +37,8 @@ public class TransportSystem {
                 if (dp[i][j] == 9) {
 
                     if (i > 0 && j > 0) {
-                        int tempValue = (dp[i - 1][j] > 0) ? dp[i - 1][j] : dp[i][j - 1];                         
-                        finalDestination = tempValue > 0 ? tempValue: -1;
+                        int tempValue = (dp[i - 1][j] > 0) ? dp[i - 1][j] : dp[i][j - 1];
+                        finalDestination = tempValue > 0 ? tempValue : -1;
                     } else if (i > 0) {
                         finalDestination = dp[i - 1][j] > 0 ? dp[i - 1][j] : -1;
                     } else if (j > 0) {
@@ -113,6 +94,69 @@ public class TransportSystem {
             }
         }
         return finalValue;
+    }
+
+    public List<List<Integer>> testCaseA() {
+        List<List<Integer>> area = new ArrayList<>();
+        List<Integer> listValues = new ArrayList();
+        listValues.add(1);
+        listValues.add(0);
+        listValues.add(0);
+        area.add(listValues);
+
+        listValues = new ArrayList();
+        listValues.add(1);
+        listValues.add(0);
+        listValues.add(0);
+        area.add(listValues);
+
+        listValues = new ArrayList();
+        listValues.add(1);
+        listValues.add(9);
+        listValues.add(1);
+        area.add(listValues);
+
+        return area;
+    }
+
+    public List<List<Integer>> testCaseB() {
+        List<List<Integer>> area = new ArrayList<>();
+        List<Integer> listValues = new ArrayList();
+        listValues.add(1);
+        listValues.add(1);
+        listValues.add(1);
+        listValues.add(1);
+        area.add(listValues);
+
+        listValues = new ArrayList();
+        listValues.add(0);
+        listValues.add(1);
+        listValues.add(1);
+        listValues.add(1);
+        area.add(listValues);
+
+        listValues = new ArrayList();
+        listValues.add(0);
+        listValues.add(1);
+        listValues.add(0);
+        listValues.add(1);
+        area.add(listValues);
+        
+        listValues = new ArrayList();
+        listValues.add(1);
+        listValues.add(1);
+        listValues.add(9);
+        listValues.add(1);
+        area.add(listValues);
+        
+        listValues = new ArrayList();
+        listValues.add(0);
+        listValues.add(0);
+        listValues.add(1);
+        listValues.add(1);
+        area.add(listValues);
+
+        return area;
     }
 
     public static void main(String[] args) {
