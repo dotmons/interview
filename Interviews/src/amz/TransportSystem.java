@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
+ * 1` ` `
  *
  * @author Dotmons
  */
@@ -35,7 +36,57 @@ public class TransportSystem {
         listValues.add(1);
         area.add(listValues);
 
-        System.out.println("The minimum transport move is: " + getMinimumTransportPort(area));
+        System.out.println(getMinimumTransportPortPost(area));
+       // System.out.println("The minimum transport move is: " + getMinimumTransportPortPost(area));
+    }
+
+    public int getMinimumTransportPortPost(List<List<Integer>> area) {
+        int finalDestination = 0;
+        if (area == null || area.isEmpty()) {
+            return -1;
+        }
+        int[][] dp = new int[area.size()][area.get(0).size()];
+
+        for (int i = 0; i < dp.length; i++) {
+            for (int j = 0; j < dp[i].length; j++) {
+                dp[i][j] = area.get(i).get(j);
+
+                int temp = dp[i][j];
+
+                if (dp[i][j] == 9) {
+
+                    if (i > 0 && j > 0) {
+                        int tempValue = (dp[i - 1][j] > 0) ? dp[i - 1][j] : dp[i][j - 1];                         
+                        finalDestination = tempValue > 0 ? tempValue: -1;
+                    } else if (i > 0) {
+                        finalDestination = dp[i - 1][j] > 0 ? dp[i - 1][j] : -1;
+                    } else if (j > 0) {
+                        finalDestination = dp[i][j - 1] > 0 ? dp[i][j - 1] : -1;
+                    }
+                } else if (i > 0 && j > 0) {
+                    if (((dp[i - 1][j] > 0) || (dp[i][j - 1] > 0)) && (dp[i][j] > 0)) {
+                        int tempValue = (dp[i - 1][j] > 0) ? dp[i - 1][j] : dp[i][j - 1];
+                        dp[i][j] += tempValue;
+                    }
+                    //System.out.println("Value:: " + dp[i][j]);
+                    //System.out.println("IIJJ: " + temp + "  dp[i][j]: " + dp[i][j] + ";  i: " + i + ";  j: = " + j);
+                } else if (i > 0) {
+
+                    if ((dp[i][j] > 0) && (dp[i - 1][j] > 0)) {
+                        dp[i][j] += dp[i - 1][j];
+                    }
+                    //System.out.println("IIII: " + temp + "  dp[i][j]: " + dp[i][j] + ";  i: " + i + ";  j: = " + j);
+                } else if (j > 0) {
+                    if ((dp[i][j] == 1) && (dp[i][j - 1] == 1)) {
+                        dp[i][j] += dp[i][j - 1];
+                    }
+                    //System.out.println("JJJJ: " + temp + "  dp[i][j]: " + dp[i][j] + ";  i: " + i + ";  j: = " + j);
+                } else {
+                    //System.out.println("NULL: " + temp + "  dp[i][j]: " + dp[i][j] + ";  i: " + i + ";  j: = " + j);
+                }
+            }
+        }
+        return finalDestination;
     }
 
     public int getMinimumTransportPort(List<List<Integer>> area) {
