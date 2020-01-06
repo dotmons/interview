@@ -56,26 +56,18 @@ public class ServerAmazon {
                             dpi[i][j] = 1;
                         }
                     } else if (i == rows - 1) {
-                        if (i == 3 && j == 2) {
-                        }
                         if ((grid.get(i - 1).get(j) == 1) || (grid.get(i).get(j + 1) == 1) || (grid.get(i).get(j - 1) == 1)) {
                             dpi[i][j] = 1;
                         }
                     } else if (i > 0) {
-                        if (i == 3 && j == 2) {
-                        }
                         if ((grid.get(i - 1).get(j) == 1) || (grid.get(i).get(j + 1) == 1)) {
                             dpi[i][j] = 1;
                         }
                     } else if (j > 0) {
-                        if (i == 3 && j == 2) {
-                        }
                         if ((grid.get(i + 1).get(j) == 1) || (grid.get(i).get(j - 1) == 1)) {
                             dpi[i][j] = 1;
                         }
                     } else if ((grid.get(0).get(1) == 1) || ((grid.get(1).get(0) == 1))) {
-                        if (i == 3 && j == 2) {
-                        }
                         dpi[0][0] = 1;
                     }
                     if (dp[i][j] == 1) {
@@ -92,7 +84,7 @@ public class ServerAmazon {
             
             for (int i = 0; i < dpi.length; i++) {
                 for (int j = 0; j < dpi[i].length; j++) {
-                    listValues.add(dp[i][j]);
+                    listValues.add(dpi[i][j]);
                 }
                 grid.add(listValues);
                 listValues = new ArrayList<>();
@@ -105,12 +97,19 @@ public class ServerAmazon {
 
     public boolean checkResult(int[][] dpi) {
         n++;
-        if (n == 2) {
+        if (n == 100) {
             return true;
         }
         for (int i = 0; i < dpi.length; i++) {
             for (int j = 0; j < dpi[i].length; j++) {
-                if (dpi[i][j] != 1) {
+                //System.out.print(dpi[i][j] +" ");
+            }
+           // System.out.println();
+        }
+        //System.out.println();
+        for (int i = 0; i < dpi.length; i++) {
+            for (int j = 0; j < dpi[i].length; j++) {
+                if (dpi[i][j] != 1) {                	
                     return false;
                 }
             }
