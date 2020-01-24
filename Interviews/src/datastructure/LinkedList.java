@@ -1,4 +1,6 @@
-package linkedlistlearn;
+package datastructure;
+
+import java.util.NoSuchElementException;
 
 public class LinkedList {
 
@@ -6,6 +8,7 @@ public class LinkedList {
 
 		private int value;
 		private Node next;
+		
 
 		public Node(int value) {
 			this.value = value;
@@ -16,13 +19,14 @@ public class LinkedList {
 	}
 
 	private Node first;
-
+	int size=0;
+	
 	public void addFirst(int item) {
 
 		Node node = new Node(item);
 		node.next = first;
 		first = node;
-
+		size++;
 	}
 
 	public void addLast(int data) {
@@ -38,12 +42,16 @@ public class LinkedList {
 			}
 			n.next = node;
 		}
+		size++;
 	}
 
 	public void deleteFirst() {
-
-		Node n = first;
-		first = n.next;
+		if (first == null) {
+			throw new NoSuchElementException();
+		} else {
+			first = first.next;
+		}
+		size--;
 	}
 
 	public void deleteLast() {
@@ -81,6 +89,11 @@ public class LinkedList {
 		return value == n.value;
 	}
 
+	public boolean contain(int value) {
+
+		return !(indexOf(value) == -1);
+	}
+
 	public int indexOf(int value) {
 
 		Node n = first;
@@ -100,11 +113,10 @@ public class LinkedList {
 
 	public void printStack() {
 		Node n = first;
-		while (n.next != null) {
+		while (n != null) {
 			System.out.println(n.value);
 			n = n.next;
 		}
-		System.out.println(n.value);
 	}
 
 	public void printStack(Node n) {
@@ -115,4 +127,16 @@ public class LinkedList {
 		System.out.println(n.value);
 	}
 
+	public void deleteLasts() {
+		Node n = first;
+		int counter=0;
+		
+		while(n!=null){			
+			if (++counter==size-1){
+				n.next = null;
+				break;
+			}
+			n = n.next;
+		}
+	}
 }
