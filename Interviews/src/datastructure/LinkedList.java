@@ -8,19 +8,16 @@ public class LinkedList {
 
 		private int value;
 		private Node next;
-		
 
 		public Node(int value) {
 			this.value = value;
 		}
 
-		public Node() {
-		}
 	}
 
 	private Node first;
-	int size=0;
-	
+	int size = 0;
+
 	public void addFirst(int item) {
 
 		Node node = new Node(item);
@@ -129,14 +126,52 @@ public class LinkedList {
 
 	public void deleteLasts() {
 		Node n = first;
-		int counter=0;
-		
-		while(n!=null){			
-			if (++counter==size-1){
+		int counter = 0;
+
+		while (n != null) {
+			if (++counter == size - 1) {
 				n.next = null;
 				break;
 			}
 			n = n.next;
 		}
+	}
+
+	public void getReverseList() {
+		Node temp = first;
+		Node prev = null;
+		Node next = null;
+		Node curr = first;
+
+		while (curr != null) {
+			next = curr.next;
+			curr.next = prev;
+			prev = curr;
+			curr = next;
+		}
+		first = prev;
+
+	}
+	
+	public void reverseLinkedListRecursion(){
+		Node n = first;
+		print(n);
+	}
+	
+	//
+	public void revereseLinkedListUsingStack(){
+		
+	}
+
+	void print(Node n) {
+		
+		if (n == null) {
+			return;
+		}
+		print(n.next);
+		System.out.println((n.value));
+
+		
+
 	}
 }
