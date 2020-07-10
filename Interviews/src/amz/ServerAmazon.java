@@ -102,11 +102,11 @@ public class ServerAmazon {
         }
         for (int i = 0; i < dpi.length; i++) {
             for (int j = 0; j < dpi[i].length; j++) {
-                //System.out.print(dpi[i][j] +" ");
+                System.out.print(dpi[i][j] +" ");
             }
-           // System.out.println();
+            System.out.println();
         }
-        //System.out.println();
+        System.out.println();
         for (int i = 0; i < dpi.length; i++) {
             for (int j = 0; j < dpi[i].length; j++) {
                 if (dpi[i][j] != 1) {                	
@@ -119,7 +119,7 @@ public class ServerAmazon {
 
     public List<List<Integer>> testCaseA() {
         List<List<Integer>> area = new ArrayList<>();
-        List<Integer> listValues = new ArrayList();
+        List<Integer> listValues = new ArrayList<Integer>();
         listValues.add(0);
         listValues.add(1);
         listValues.add(1);
@@ -127,7 +127,7 @@ public class ServerAmazon {
         listValues.add(1);
         area.add(listValues);
 
-        listValues = new ArrayList();
+        listValues = new ArrayList<Integer>();
         listValues.add(0);
         listValues.add(1);
         listValues.add(0);
@@ -135,7 +135,7 @@ public class ServerAmazon {
         listValues.add(0);
         area.add(listValues);
 
-        listValues = new ArrayList();
+        listValues = new ArrayList<Integer>();
         listValues.add(0);
         listValues.add(0);
         listValues.add(0);
@@ -143,7 +143,7 @@ public class ServerAmazon {
         listValues.add(1);
         area.add(listValues);
 
-        listValues = new ArrayList();
+        listValues = new ArrayList<Integer>();
         listValues.add(0);
         listValues.add(1);
         listValues.add(0);
