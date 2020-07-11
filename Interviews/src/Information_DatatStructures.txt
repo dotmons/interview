@@ -1,1 +1,19 @@
 LinkedList:
+
+List of advantages :
+
+Linked List is Dynamic data Structure .
+Linked List can grow and shrink during run time.
+Insertion and Deletion Operations are Easier
+Efficient Memory Utilization ,i.e no need to pre-allocate memory
+Faster Access time,can be expanded in constant time without memory overhead
+Linear Data Structures such as Stack,Queue can be easily implemeted using Linked list
+
+Disadvantages of Linked List
+Memory Usage
+More memory is required to store elements in linked list as compared to array. Because in linked list each node contains a pointer and it requires extra memory for itself.
+Traversal
+Elements or nodes traversal is difficult in linked list. We can not randomly access any element as we do in array by index. For example if we want to access a node at position n then we have to traverse all the nodes before it. So, time required to access a node is large.
+Reverse Traversing
+In linked list reverse traversing is really difficult. In case of doubly linked list its easier but extra memory is required for back pointer hence wastage of memory.
+If you know some other advantages and disadvantages of linked list then please mention by commenting below.
