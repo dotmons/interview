@@ -1,14 +1,5 @@
 package datastructure;
 
-class counter {
-
-	int n;
-
-	public void increment() {
-		n++;
-	}
-}
-
 public class MultiThread {
 
 	public MultiThread() throws InterruptedException {
@@ -21,10 +12,15 @@ public class MultiThread {
 			public void run() {
 
 				for (int i = 1; i <= 100000; i++) {
-					st.append("A");
+
 					sb.append("B");
-					// System.out.println("AAA");
-					c.increment();
+
+					st.append("A");
+
+					synchronized (c) {
+						c.increment();
+					}
+
 				}
 
 			}
@@ -34,10 +30,14 @@ public class MultiThread {
 			public void run() {
 
 				for (int i = 1; i <= 100000; i++) {
-					st.append("A");
+
 					sb.append("B");
-					// System.out.println("BBB");
-					c.increment();
+
+					st.append("A");
+
+					synchronized (c) {
+						c.increment();
+					}
 				}
 
 			}
@@ -49,7 +49,7 @@ public class MultiThread {
 		t1.join();
 		t2.join();
 
-		System.out.println("Count: " + c.n + "::  " + st.length());
+		System.out.println("Count: " + c.n + "::  ");
 		System.out.println("StringBuilder: " + st.length());
 		System.out.println("StringBuffer: " + sb.length());
 	}
@@ -59,6 +59,15 @@ public class MultiThread {
 
 		MultiThread c = new MultiThread();
 
+	}
+
+	class counter {
+
+		int n;
+
+		public void increment() {
+			n++;
+		}
 	}
 
 }
