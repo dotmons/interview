@@ -24,9 +24,27 @@ This cannot guarantee the order of insertion when returned back. Used for key-pa
 
 
 TreeMap:
-TreeMap is an implementation of SortedMap and keeps keys in their natural order or a custom order specified by Comparator provided while creating TreeMap
+Java TreeMap class is a red-black tree based implementation. It provides an efficient means of storing key-value pairs in sorted order in asc order on key.
 
 
+NavigableMap: 
+Can get the TreeMap in descending order
+NavigableMap<Integer,String> map=new TreeMap<Integer,String>();
+
+  map.put(100,"Amit");    
+      map.put(102,"Ravi");    
+      map.put(101,"Vijay");    
+      map.put(103,"Rahul");    
+      //Maintains descending order  
+      System.out.println("descendingMap: "+map.descendingMap());  
+      //Returns key-value pairs whose keys are less than or equal to the specified key.  
+      System.out.println("headMap: "+map.headMap(102,true));  
+      //Returns key-value pairs whose keys are greater than or equal to the specified key.  
+      System.out.println("tailMap: "+map.tailMap(102,true));  
+      //Returns key-value pairs exists in between the specified key.  
+      System.out.println("subMap: "+map.subMap(100, false, 102, true));   
+
+    
 Set:
 The set interface present in the java.util package and extends the Collection interface is an unordered collection of objects in which duplicate values cannot be stored. 
 
@@ -46,3 +64,21 @@ But Java uses only call by value. It creates a copy of references and pass them 
 
 LinkedHashMap:
 It is exactly like HashMap, except that when you iterate over it, it presents the items in the insertion order.
+
+StringBuilder: clear data
+stringBuilder.setLength(0);
+
+
+PriorityQueue:
+The priority queue does not follow the FIFO rule like normal Queue. It arranges the elements based on their priorities.
+Priority queues can store comparable objects to arrange them in correct priorities.
+It has methods like add(), remove(), poll(): to retrieve and remove the element from the head of the queue
+
+
+
+Length of Array:
+int[][] poit = new int[2][5];
+
+System.out.println(poit.length);   prints 2
+System.out.println(poit[0].length); prints 5
+	
