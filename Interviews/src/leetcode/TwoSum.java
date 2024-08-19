@@ -1,21 +1,61 @@
 package leetcode;
 
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Objects;
+import java.util.*;
 
 public class TwoSum {
 
 	public TwoSum() {
 
-		int nums[] = { 2,7,11,15 };
+		int nums[] = { 2,11,15,7 };
 		int target = 9;
+		//System.out.println(Arrays.toString(twoBestSum(nums, target)));
+		System.out.println(getSumCompliment(nums, target));
 		// 2 =
-		System.out.println(Arrays.toString(twoSumHashMap(nums, target)));
-		System.out.println(Arrays.toString(twoSum(nums, target)));
-		System.out.println(Arrays.toString(twoSumSolution(nums, target)));
-		System.out.println(Arrays.toString(twoSumWorkingSolution(nums, target)));
+//		System.out.println(Arrays.toString(twoSumHashMap(nums, target)));
+//		System.out.println(Arrays.toString(twoSum(nums, target)));
+//		System.out.println(Arrays.toString(twoSumSolution(nums, target)));
+//		System.out.println(Arrays.toString(twoSumWorkingSolution(nums, target)));
+	}
+
+	public boolean getSumCompliment(int [] nums, int target){
+
+		// int i = 0;
+		// int j = nums.length - 1;
+		Set setValue = new HashSet<Integer>();
+
+		for (int i=0; i<nums.length; i++){
+
+			int diff = target - nums[i];
+			if (setValue.contains(nums[i])){
+				return true;
+			}
+			else{
+				setValue.add(diff);
+			}
+
+		}
+		return false;
+
+	}
+
+	public int[] twoBestSum(int[] nums, int target) {
+		int i = 0, j = nums.length - 1;
+		if (nums.length>1){
+			while (i<j){
+				int sum = nums[j]+nums[i];
+				if (sum<target){
+					i++;
+				}
+				else if (sum>target){
+					j--;
+				}
+				else{
+					return new int[]{nums[i],nums[j]};
+				}
+			}
+			return new int[]{nums[i],nums[j]};
+		}
+		return new int[]{};
 	}
 
 	public int[] twoSum(int[] nums, int target) {

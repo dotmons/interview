@@ -52,6 +52,9 @@ public class SingleNumber {
 			}
 		}
 
+
+
+
 		Set<Entry<Integer, Integer>> sEntry = mapValue.entrySet();
 
 		for (Entry<Integer, Integer> en : sEntry) {

@@ -10,14 +10,6 @@ public class TotalSum {
 		System.out.println(isSumPairInList(getListB(), 8));
 		//test();
 	}
-	
-	public void test(){
-		String s = "This is a sample sentence";
-		
-		for (String a : s.split("\\W+")){
-			System.out.println(a);
-		}
-	}
 
 	boolean isSumPairInList(int[] arr, int sum) {
 

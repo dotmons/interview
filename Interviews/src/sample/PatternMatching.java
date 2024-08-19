@@ -9,7 +9,7 @@ public class PatternMatching {
 		String text = "This is the text to be searched " + "for occurrences of the pattern.";
 
 		String pattern = ".*is.*";
-
+		System.out.println("30".charAt(1));
 		boolean matches = Pattern.matches(pattern, text);
 
 		System.out.println("matches = " + matches);
