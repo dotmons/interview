@@ -7,7 +7,7 @@ Linked List can grow and shrink during run time.
 Insertion and Deletion Operations are Easier
 Efficient Memory Utilization ,i.e no need to pre-allocate memory
 Faster Access time,can be expanded in constant time without memory overhead
-Linear Data Structures such as Stack,Queue can be easily implemeted using Linked list
+Linear Data Structures such as Stack,Queue can be easily implemented using Linked list
 
 Disadvantages of Linked List
 Memory Usage
@@ -22,6 +22,9 @@ If you know some other advantages and disadvantages of linked list then please m
 HashMap:
 This cannot guarantee the order of insertion when returned back. Used for key-pair values
 
+hashmap.containsKey
+hashmap.put
+hashmap.remove
 
 TreeMap:
 Java TreeMap class is a red-black tree based implementation. It provides an efficient means of storing key-value pairs in sorted order in asc order on key.
@@ -54,6 +57,7 @@ A TreeSet is a set where the elements are sorted.
 HashSet:
 A HashSet is a set where the elements are not sorted or ordered. It is faster than a TreeSet. The HashSet is an implementation of a Set.
 
+
 Long Vs Int
 The datatype int is of 32-bits.	The data type long is of 64-bits.
 
@@ -81,4 +85,26 @@ int[][] poit = new int[2][5];
 
 System.out.println(poit.length);   prints 2
 System.out.println(poit[0].length); prints 5
-	
+
+
+Sorting:
+ArrayList:
+		Collections.sort(nums);
+		Collections.sort(nums,Collections.reverseOrder())
+
+Sort array:
+Arrays.sort(num[])
+
+You can create a stack by call util here:
+Stack<Character> stack = new Stack<>();
+
+You can perform a binary search by calling
+Arrays.binarySearch(int[] a, int key) returns the index. returns -1 if not found
+
+Loop through HashMap:
+Map<Integer,Integer> mp = new HashMap<Integer,Integer>();
+
+for (mp.Entry<Integer,Integer> vl : mp.entrySet()){
+    mp.getKey();
+    mp.getValue();
+}

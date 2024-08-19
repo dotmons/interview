@@ -15,7 +15,7 @@ public class BinarySearch {
 		// 3 5 8 12 20 45 90 99
 		// 0 1 2 3 4 5 6 7
 
-		System.out.println(getBinarySearch(22, dataset));
+		System.out.println(getBinarySearch(20, dataset));
 	}
 
 	// 90

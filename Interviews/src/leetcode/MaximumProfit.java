@@ -1,38 +1,26 @@
 package leetcode;
 
 public class MaximumProfit {
-	
-	public MaximumProfit(){
-		int price[] = {7,3,5,1,4,9};
-		System.out.println(maxProfit(price));
-	}
-	
-    public int maxProfit(int[] prices) {
-        int stock = 0;
-        int lengthP = prices.length;
-        if ((lengthP<1) || (lengthP> 30000)){
-            return -1;
-        }
-        
-        if ((prices[lengthP-1]<0) || (prices[lengthP-1]>10000)){
-                return -1;
-            }
-        
-        for (int i=0; i<lengthP-1; i++){
-            if ((prices[i]<0) || (prices[i]>10000)){
-                return -1;
-            }
-            
-            if (prices[i+1]>prices[i]){
-                stock += prices[i+1] - prices[i];   
-            }
-            
-        }       
-        return stock;
+
+    public MaximumProfit() {
+        int price[] = {7, 3, 5, 1, 4, 9};
+        System.out.println(maxProfit(price));
     }
-    
-    public static void main(String[] args){
-    	new MaximumProfit();
+
+    public int maxProfit(int[] prices) {
+        int min = prices[0];
+        int profit = 0;
+        int maxprofit = 0;
+        for (int i = 0; i < prices.length; i++) {
+            profit = prices[i] - min;
+            maxprofit = Math.max(maxprofit, profit);
+            min = Math.min(min, prices[i]);
+        }
+        return maxprofit;
+    }
+
+    public static void main(String[] args) {
+        new MaximumProfit();
     }
 
 }
