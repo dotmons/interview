@@ -45,13 +45,9 @@ public class BinarySearch {
 			midpoint = (firstPoint + secondPoint) / 2;
 		}
 
-		if (firstPoint > secondPoint) {
-			return -1;
-		}
+        return -1;
 
-		return midpoint;
-
-	}
+    }
 
 	public static void main(String[] args) {
 		BinarySearch binarySearch = new BinarySearch();
