@@ -48,6 +48,12 @@ NavigableMap<Integer,String> map=new TreeMap<Integer,String>();
       System.out.println("subMap: "+map.subMap(100, false, 102, true));   
 
 
+LinkedHashMap:
+
+	•	Overview: Maintains the order of insertion or, if configured, access order.
+	•	Performance: Slightly slower than HashMap because it maintains a linked list for order.
+	•	Use Case: When you need predictable iteration order, like preserving insertion or access order.
+
 // To sort hashmap based of the value:
         List<Map.Entry<String, Integer>> entryList = new ArrayList<>(resultSet.entrySet());
         entryList.sort((e1, e2) -> e2.getValue().compareTo(e1.getValue()));
@@ -55,6 +61,22 @@ NavigableMap<Integer,String> map=new TreeMap<Integer,String>();
         for (Map.Entry<String, Integer> entry : entryList) {
             sortedMap.put(entry.getKey(), entry.getValue());
         }
+
+        import java.util.HashMap;
+
+import java.util.LinkedHashMap;
+
+public class LinkedHashMapExample {
+    public static void main(String[] args) {
+        LinkedHashMap<Integer, String> map = new LinkedHashMap<>();
+        map.put(3, "Three");
+        map.put(1, "One");
+        map.put(2, "Two");
+
+        System.out.println("LinkedHashMap: " + map);
+        // Output: {3=Three, 1=One, 2=Two} (Maintains insertion order)
+    }
+}
 
     
 Set:
@@ -75,8 +97,7 @@ But Java uses only call by value. It creates a copy of references and pass them 
 
 
 
-LinkedHashMap:
-It is exactly like HashMap, except that when you iterate over it, it presents the items in the insertion order.
+
 
 StringBuilder: clear data
 stringBuilder.setLength(0);

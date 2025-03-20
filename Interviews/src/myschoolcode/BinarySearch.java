@@ -49,6 +49,23 @@ public class BinarySearch {
 
     }
 
+
+	int getBinarySearchData(int searchValue, java.util.List<Integer> dataset) {
+
+		int first = dataset.get(0);
+		int last = dataset.size() - 1;
+		int mid = (first + last) / 2;
+
+		while (first <= last) {
+
+			if (searchValue == dataset.get(mid)) {
+				return mid;
+			}
+		}
+		return -1;
+
+	}
+
 	public static void main(String[] args) {
 		BinarySearch binarySearch = new BinarySearch();
 	}

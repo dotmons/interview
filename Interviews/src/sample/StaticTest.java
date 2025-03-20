@@ -1,6 +1,7 @@
 package sample;
 
-public class StaticTest {
+public class
+StaticTest {
 
     String lastName;
 	String firstName;
@@ -16,10 +17,22 @@ public class StaticTest {
 		count++;
 		System.out.println("Lastname: " + lastName + " Firstname: " + firstName + " Total members: " + count);
 	}
-	
+
+	static void sortInteger(){
+		int a = 3;
+		int b = 2;
+		int c = 7;
+
+		int max = Math.max(Math.max(a,b),c );
+		int min = Math.min(Math.min(a,b),c );
+		int mid = a + b + c - max - min;
+
+		System.out.println("Max: " + max + " Min: " + min + " Mid: " + mid);
+	}
 	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
+		sortInteger();
 		StaticTest a = new StaticTest();
 		a.addUser("Dotun", "Adeoye");
 		a.addUser("Lala", "Ogba");
