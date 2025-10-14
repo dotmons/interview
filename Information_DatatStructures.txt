@@ -128,6 +128,17 @@ Arrays.sort(num[])
 List<Interval> intervals = new ArrayList<>();
 intervals.sort((a, b) -> a.start - b.start);
 
+Sort a single object:
+
+currencyMapList.sort(Comparator.comparing( c -> c.shippingAmount));
+
+Sorting of multiple objects:
+currencyMapList.sort(
+    Comparator.comparingInt((CurrencyShippingConversion c) -> c.shippingAmount)
+              .thenComparing(c -> c.shippingAgent)
+              .thenComparing(c -> c.toCurrency)
+);
+
 You can create a stack by call util here:
 Stack<Character> stack = new Stack<>();
 
